@@ -1,0 +1,62 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <style>.error{
+        color:red;
+    }</style>
+</head>
+<body>
+    <div>
+    <form name="formulario" id="formulario" onsubmit="return validar()">
+        <div id="errorNom" class="error">
+        </div>
+        <div>
+            <label for="nombre">Nombre</label>
+            <input type="text" name="nombre" id="nombre">
+        </div>
+        <div id="errorApellido" class="error"></div>
+        <div>
+            <label for="apellido">Apellido</label>
+            <input type="text" name="apellido" id="apellido">
+        </div>
+        <div id="errorTelefono" class="error"></div>
+        <div>
+            <label for="telefono">Telefono</label>
+            <input type="tel" name="telefono"  size="10" id="telefono" >
+        </div>
+        <div class="error" id="errorEmail"></div>
+        <div>
+            <label for="email">Correo electronico</label>
+            <input type="email" name="email" id="email">
+        </div>
+        <div class="error" id="errorContra"></div>
+        <div>
+            <label for="contraseña">Contraseña</label>
+            <input type="password" name="contraseña" id="contraseña" >
+        </div>
+        <div class="error" id="errorConfirmar"></div>
+        <div>
+            <label for="confirmarContra">Confirmar contraseña</label>
+            <input type="password" name="confirmarContra" id="confirmarContra">
+        </div>
+        <div>
+            <input type="submit" id="enviar" value="Enviar ᕕ( ՞ ᗜ ՞ )ᕗ">
+        </div>
+    </form>
+    <table>
+        <thead>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Telefono</th>
+            <th>Correo electronico</th>
+            <th>Acciones</th>
+        </thead>
+        <tbody id="tabla"></tbody>
+    </table>
+    <button id="limpiar" onclick="limpiar()">Limpiar ༼⁰o⁰；༽</button>
+    </div>
+</body>
+<script src="main.js"></script>
+</html>
