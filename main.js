@@ -53,11 +53,14 @@ function validar(){
 }
 //Funcion de guardar en ls
 function guardar(){
+    
     if (vector == null)
     {
         vector = [];
     }
+    var id = vector.length;
     var objeto ={
+        "userId":id,
         "nombre": fNombre.value,
         "apellido":fApellido.value,
         "telefono":fTelefono.value,
@@ -65,7 +68,14 @@ function guardar(){
     }
     vector.push(objeto);
     localStorage.setItem("xd",JSON.stringify(vector));
-    console.log(vector);
+    $.ajax({
+        method: "POST",
+        url:"recibir.php",
+        data: objeto,
+        success: function(data){
+            alert(data);
+        }
+    });
     return true;
 }
 //Muestra la tabla
@@ -82,7 +92,7 @@ function pintar(){
         col1.textContent=simon.apellido;
         col2.textContent=simon.telefono;
         col3.textContent=simon.email;
-        col4.innerHTML=`<button drid="${index}" class="renglon" onclick="borrar(this)">eliminar ⋌༼ •̀ ⌂ •́ ༽⋋</button> <button eid="${index}" onclick="editar(this)">editar ¯_( ͠° ͟ʖ °͠ )_/¯</button>`;
+        col4.innerHTML=`<button drid="${index}" class="renglon" onclick="borrar(this)">eliminar</button> <button eid="${index}" onclick="editar(this)">editar</button>`;
     });
 }
 //Funcion para borrar
@@ -93,7 +103,6 @@ function borrar(event){
     localStorage.setItem("xd",JSON.stringify(vector));
     console.log(vector);
     pintar();
-    location.reload();
 }
 //Funcion para editar
 function editar(event){
