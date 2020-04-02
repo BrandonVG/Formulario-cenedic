@@ -1,5 +1,5 @@
 <?php
-
+/* 
 include_once "dbase.php";
 $data = $_POST;
 $id = $data['userId'];
@@ -17,5 +17,5 @@ else{
 }
 
 $consulta->close();
-
+*/
 ?>

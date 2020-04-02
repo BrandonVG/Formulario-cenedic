@@ -1,3 +1,4 @@
+/*
 var fNombre = document.forms["formulario"]["nombre"];
 var fApellido = document.forms["formulario"]["apellido"];
 var fTelefono = document.forms["formulario"]["telefono"];
@@ -49,4 +50,4 @@ function validar(){
     }
     else{document.querySelector("#errorConfirmar").innerHTML="";}
     guardar();
-}
+}*/
